@@ -1,10 +1,10 @@
 import re
 from dataclasses import dataclass, field
-from typing import Optional, Iterable, Any, Dict, Tuple
+from typing import Iterable, Any, Dict, Tuple
 
 from openai.openai_object import OpenAIObject
 
-from goldpot import DefaultConfig
+from goldpot.DefaultConfig import DefaultConfig
 from goldpot.Utils import Splitter
 
 
