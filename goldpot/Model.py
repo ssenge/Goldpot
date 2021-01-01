@@ -59,6 +59,15 @@ class CompletionOutput:
         self.completions = [r.text for r in self.results]
         self.completion = '\n'.join(self.completions)
 
+    # TODO: numpy vectorized version
+    def extract(self, regex: str):
+        ex = lambda s: re.search(regex, s, re.IGNORECASE)
+        return list(map(ex, self.completions))
+
+    def extract1(self, regex: str) -> str:
+        ex = lambda match: match.group(1).strip() if match is not None else ""
+        return list(map(ex, self.extract(regex)))
+
 
 @dataclass
 class SearchOutput:
