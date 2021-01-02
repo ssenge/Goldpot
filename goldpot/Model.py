@@ -65,7 +65,7 @@ class CompletionOutput:
         return list(map(ex, self.completions))
 
     def extract1(self, regex: str) -> str:
-        ex = lambda match: match.group(1).strip() if match is not None else ""
+        ex = lambda match: match.group(1).strip() if match is not None and match.group(1) is not None else ""
         return list(map(ex, self.extract(regex)))
 
 
