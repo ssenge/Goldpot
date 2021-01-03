@@ -11,10 +11,14 @@ class Splitter:
     @staticmethod
     def len_chunk_split(items: Iterable[str], max_len: int = sys.maxsize, max_chunks: int = sys.maxsize) -> Iterable[str]:
 
-        def chunk(iterable, size):
+        def chunk_python38(iterable, size):
             it = iter(iterable)
             while item := list(itertools.islice(it, size)):
                 yield item
+
+        def chunk(iterable, n):
+            for i in range(0, len(iterable), n):
+                yield iterable[i:i+n]
 
         def rec(items, res: Iterable[str] = [], pending=True):
             if len(items) == 0 or not pending:

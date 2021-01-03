@@ -30,4 +30,6 @@ class Goldpot:
 
     def search(self, input: SearchInput) -> SearchOutput:
         return SearchOutput(
-            [self.search_(q := query_docs[0], ds := query_docs[1]) for query_docs in input.get_docs()], input.docs)
+            #[self.search_(q := query_docs[0], ds := query_docs[1]) for query_docs in input.get_docs()], input.docs)
+            # Python 3.7:
+            [self.search_(query_docs[0], query_docs[1]) for query_docs in input.get_docs()], input.docs)
