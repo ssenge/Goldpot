@@ -25,7 +25,7 @@ search_engine_config = Engines.ADA
 ```
 (See [sample_engines_config.yml](conf/sample_engines_config.yml) for a sample completion engine config file.)
 
-### Completion
+### Completion:
 After configuration, `Goldpot.complete()` can be used to request a completion from the GPT-3 API. It accepts a `CompletionInput` instance, which main purpose is to split long input texts in multiple input prompts i.e. you may also get multiple responses back. Goldpot takes care of this. 
 
 
@@ -67,7 +67,7 @@ The response object consists of the following components:
 - **prompts: List[str]** -> The prompts generated from the input
 - **output: List[OpenAIObject]** -> GPT-3 raw response
 
-### Search
+### Search:
 Similar to completion, `Goldpot.search()` accepts a `SearchInput` instance, again, which splits the input documents (accordingly to the provided `max_chars` and the GPT-3's 200 document limitation.)
 ```python
 docs = ['I like pizza.', 'Python is a scripting language.', 'Socrates is an ancient philosopher.']
