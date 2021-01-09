@@ -2,6 +2,7 @@
 /build/
 /.idea/
 /.pytest_cache/
-/examples/
 /goldpot_ssenge.egg-info/
 /Goldpot.iml
+/internal_examples/
+/goldpot.egg-info/

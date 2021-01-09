@@ -11,7 +11,7 @@ class Splitter:
     @staticmethod
     def len_chunk_split(items: Iterable[str], max_len: int = sys.maxsize, max_chunks: int = sys.maxsize) -> Iterable[str]:
 
-        def chunk(iterable, n):
+        def chunks(iterable, n):
             for i in range(0, len(iterable), n):
                 yield iterable[i:i+n]
 
@@ -22,4 +22,4 @@ class Splitter:
                 split_n = len(list(takewhile(lambda cum_len: not cum_len > max_len, accumulate([len(s) for s in items]))))
                 return rec(items[split_n:], res + [items[:split_n]], split_n > 0)
 
-        return [list(chunk(split, max_chunks)) for split in rec(items) if len(split) > 0]
+        return [list(chunks(split, max_chunks)) for split in rec(items) if len(split) > 0]

@@ -1,13 +1,13 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+with open("README_PyPI.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
 setuptools.setup(
     name="goldpot",
-    version="0.0.3",
+    version="0.0.3.1",
     author="Sebastian Senge",
-    author_email="mail@sebastian-senge.de",
+    author_email="ssenge.public@gmail.com",
     description="A thin convenience layer on top of OpenAI's GPT-3 Python library",
     long_description=long_description,
     long_description_content_type="text/markdown",

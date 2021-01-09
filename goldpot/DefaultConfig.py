@@ -15,5 +15,5 @@ class Engines(Enum):
 
 class DefaultConfig:
     max_chars: int = 7500
-    completion_engine_config: CompletionEngineConfig = CompletionEnginesConfigReader().read("conf/engines.yml").get("TST")
+    completion_engine_config: CompletionEngineConfig = CompletionEnginesConfigReader().read("conf/sample_engines_config.yml").get("TST")
     search_engine_config = Engines.ADA

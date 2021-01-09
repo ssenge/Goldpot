@@ -18,10 +18,14 @@ class CompletionEngineConfig(DataClassJsonMixin):
     logprobs: Optional[int]
     echo: bool
     stop: Optional[List[str]]
-    presence_penalty: int
-    frequency_penalty: int
+    presence_penalty: float
+    frequency_penalty: float
     best_of: int
     #logit_bias: Optional[Dict[str, int]]
+
+    def __post_init__(self):
+        if not isinstance(self.engine, str):
+            self.engine = str(self.engine)
 
 
 @dataclass

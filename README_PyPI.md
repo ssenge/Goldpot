@@ -1,0 +1,1 @@
+Goldpot is a thin convenience layer on top of OpenAI's [GPT-3](https://openai.com/blog/openai-api/) Python [library](https://github.com/openai/openai-python). Details can be found on the GitHub [page](https://github.com/ssenge/Goldpot).
