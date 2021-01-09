@@ -84,7 +84,7 @@ The response object consists of the following components:
 - **scores: List[Tuple(str, Tuple[float, float])]** -> Each document is associated with two float score values: the first one is the raw GPT-3 score (from -infinity to +infinity) and a second normalized one (between 0 to 1, calculated as score.clip(0, 300)/300, as 0 and 300 are the typical low/high values for semantical dissimlar/similar query/document matches as per GPT-3 documentation.)
 - **scores_sorted** -> Same as scores but sorted by GPT-3 scores
 - **docs: List[str]** -> Documents used as input
-- **output: List[OpenAIObject]** -> GPT-3 raw response
+- **output: List[OpenAIObject]** -> GPT-3's raw response
 
 ## Installation
 
