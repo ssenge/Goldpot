@@ -7,8 +7,8 @@ class Engines(Enum):
     BABBAGE = auto()
     CURIE = auto()
     DAVINCI = auto()
-    INSTRUCT_CURIE_BETA = auto()
-    INSTRUCT_DAVINCI_BETA = auto()
+    CURIE_INSTRUCT = auto()
+    DAVINCI_INSTRUCT_BETA = auto()
 
     def __str__(self):
         return self.name.lower().replace('_', '-')

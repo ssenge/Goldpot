@@ -15,7 +15,7 @@ configs:
           logit_bias: Null
 
     - PROD:
-          engine: instruct-davinci-beta
+          engine: davinci-instruct-beta
           max_tokens: 256
           temperature: 0.3
           top_p: 1.0

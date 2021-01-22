@@ -5,7 +5,7 @@ from goldpot import *
 api_key = "<enter you api key>"
 
 def completion_sample(api_key: str):
-    cec = CompletionEngineConfig(engine=Engines.ADA, max_tokens=256, temperature=0.0, top_p=0.0, n=1, stream=False,
+    cec = CompletionEngineConfig(engine=Engines.DAVINCI_INSTRUCT_BETA, max_tokens=256, temperature=0.0, top_p=0.0, n=1, stream=False,
                                  logprobs=None, echo=False, stop=['####'], presence_penalty=0.0, frequency_penalty=0.0, best_of=1)
 
     gp = Goldpot(api_key, completion_engine_config=cec)
