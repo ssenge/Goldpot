@@ -18,10 +18,12 @@ class Engines(Enum):
         return self.name.lower().replace('_', '-')
 
 class DefaultConfig:
-    resource_package = __name__
-    resource_path = '/'.join(('../conf', 'sample_engines_config.yml'))  # Do not use os.path.join()
-    conf = pkg_resources.resource_filename(resource_package, resource_path)
+#    resource_package = __name__
+#    resource_path = '/'.join(('conf', 'sample_engines_config.yml'))  # Do not use os.path.join()
+#    conf = pkg_resources.resource_filename(resource_package, resource_path)
 
-    completion_engine_config: CompletionEngineConfig = CompletionEnginesConfigReader().read(conf).get("TST")
+    completion_engine_config: CompletionEngineConfig = CompletionEngineConfig(engine=Engines.ADA, max_tokens=256, temperature=0.0, top_p=0.0, n=1, stream=False,
+                                                                              logprobs=None, echo=False, stop=['####'], presence_penalty=0.0, frequency_penalty=0.0, best_of=1)
+#    CompletionEnginesConfigReader().read("conf/engines.yml").get("TST")
     search_engine_config = Engines.ADA
     max_chars: int = 7500
