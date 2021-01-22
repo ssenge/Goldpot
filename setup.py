@@ -5,7 +5,7 @@ with open("README_PyPI.md", "r", encoding="utf-8") as f:
 
 setuptools.setup(
     name="goldpot",
-    version="0.0.3.2",
+    version="0.0.3.3",
     author="Sebastian Senge",
     author_email="ssenge.public@gmail.com",
     description="A thin convenience layer on top of OpenAI's GPT-3 Python library",

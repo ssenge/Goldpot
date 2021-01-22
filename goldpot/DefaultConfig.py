@@ -1,5 +1,9 @@
 from enum import Enum, auto
 
+from dataclasses import dataclass
+
+import pkg_resources
+
 from goldpot.CompletionEnginesConfig import CompletionEnginesConfigReader, CompletionEngineConfig
 
 class Engines(Enum):
@@ -14,6 +18,10 @@ class Engines(Enum):
         return self.name.lower().replace('_', '-')
 
 class DefaultConfig:
-    max_chars: int = 7500
-    completion_engine_config: CompletionEngineConfig = CompletionEnginesConfigReader().read("conf/sample_engines_config.yml").get("TST")
+    resource_package = __name__
+    resource_path = '/'.join(('../conf', 'sample_engines_config.yml'))  # Do not use os.path.join()
+    conf = pkg_resources.resource_filename(resource_package, resource_path)
+
+    completion_engine_config: CompletionEngineConfig = CompletionEnginesConfigReader().read(conf).get("TST")
     search_engine_config = Engines.ADA
+    max_chars: int = 7500
